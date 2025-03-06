@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2738380567816245834}
   - component: {fileID: -5442971658099831192}
   - component: {fileID: 6436721417596875277}
+  - component: {fileID: -2910606021203202725}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -92,8 +93,10 @@ MonoBehaviour:
   SquashAndStretchRecoverSpeed: 5
   maxStepClimbable: 2
   maxTraversableSlope: 40
+  maxGroundedSlope: 65
   slideSpeed: 42
   platformGripForce: 7.7
+  extraGroundingHeightCheck: 0.1
   stompDamage: 1
   airRotationSpeed: 0.38
   airAcceleration: 18
@@ -104,6 +107,7 @@ MonoBehaviour:
   - {x: 0, y: 17, z: 6}
   chainJumpWindow: 0.1
   jumpBufferTime: 0.17
+  groundedTimeBeforeJump: 0.12
   jumpAudio: {fileID: 0}
   landAudio: {fileID: 0}
   onJumpPerformed:
@@ -337,6 +341,21 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   dashTrailColor: {r: 0.55722225, g: 0.41870406, b: 0.81886786, a: 1}
+--- !u!114 &-2910606021203202725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecc8f11f4363a6468391b6dfa7cc364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 100000, guid: b0104eb960df8f94f91079287c1ef868, type: 3}
+  bulletSpeed: 10
+  bulletLifetime: 2
 --- !u!1 &100018
 GameObject:
   m_ObjectHideFlags: 0
