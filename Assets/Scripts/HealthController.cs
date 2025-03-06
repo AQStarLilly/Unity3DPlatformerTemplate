@@ -254,6 +254,20 @@ public class HealthController : MonoBehaviour
 		
 		CalculateAndApplyCollisionDamage(collision);
 	}
+
+
+	void onTriggerEnter(Collider other)
+	{
+		if (other.CompareTag("Bullet"))
+		{
+			Bullet bullet = other.GetComponent<Bullet>();
+			if (bullet != null)
+			{
+				ApplyDamage(bullet.bulletDamage);
+				Destroy(other.gameObject);
+			}
+		}
+	}
 	
 	/// <summary>
 	/// Determines if a collision should cause damage to this object
