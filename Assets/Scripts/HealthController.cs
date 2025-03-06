@@ -255,8 +255,10 @@ public class HealthController : MonoBehaviour
 		CalculateAndApplyCollisionDamage(collision);
 	}
 
-
-	void onTriggerEnter(Collider other)
+    /// <summary>
+    /// Handles bullet hits and determines if the object should be damaged
+    /// </summary>   
+    void onTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Bullet"))
 		{
